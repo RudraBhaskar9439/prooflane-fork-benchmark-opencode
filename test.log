@@ -47,3 +47,34 @@ PASS candidate regression: initial 0, first click 1, second click 2
 exit=0
 PASS recorded Chromium before assertion: 0 -> 2, commit 838b1a555e59091607ce412b737a19058386d0cd
 PASS recorded Chromium after assertion: 0 -> 1, commit f2fa68f6f8683f027c8d4076555c63c28931866c
+
+PASS final delivery metadata, anonymous video hashes/playback, and local receipt paths
+{
+  "recordedAt": "2026-11-18T03:40:56.388Z",
+  "prUrl": "https://github.com/AgentCityBuilders/prooflane-fork-benchmark-opencode/pull/2",
+  "isDraft": true,
+  "isCrossRepository": true,
+  "base": "838b1a555e59091607ce412b737a19058386d0cd",
+  "head": "f2fa68f6f8683f027c8d4076555c63c28931866c",
+  "files": [
+    "journey.mjs",
+    "server.mjs"
+  ],
+  "anonymousVideoPlayback": [
+    {
+      "url": "https://raw.githubusercontent.com/RudraBhaskar9439/prooflane-fork-benchmark-opencode/c2c6990973e1a783e46c59a856a3bf01bfc27ecb/before.mp4",
+      "status": 200,
+      "sha256": "4824500a3e1467352fc225afcfb2ec9f3f2c6e04385c7154c74ec761b90c7d90",
+      "ended": true,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/RudraBhaskar9439/prooflane-fork-benchmark-opencode/c2c6990973e1a783e46c59a856a3bf01bfc27ecb/after.mp4",
+      "status": 200,
+      "sha256": "ec10905c9a9482d256d3de73ad0572547b9c669b88c29374f3700ada06c16ea1",
+      "ended": true,
+      "error": null
+    }
+  ],
+  "receiptPathsPresent": true
+}

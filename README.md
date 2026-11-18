@@ -28,6 +28,12 @@ Both recordings are actual visible Chromium 159.0.8154.6 page recordings at 1280
 
 See [test.log](test.log), [before facts](before.json), [after facts](after.json), and [SHA256SUMS](SHA256SUMS).
 
+## Fresh independent native review
+
+The isolated OpenCode review inspected exact HEAD `f2fa68f6f8683f027c8d4076555c63c28931866c`, independently reran base/candidate browser behavior and the regression, decoded all four videos, and inspected transition frames. Its initial missing-PR finding was resolved after [draft PR #2](https://github.com/AgentCityBuilders/prooflane-fork-benchmark-opencode/pull/2) was created.
+
+The same fresh review session then independently verified the PR's draft/cross-repository destination and source, exact base/head, two-file patch, PR body, anonymous video bytes/hashes, and complete Chromium playback. **No remaining findings.** See [final review report](fresh-review.md), [anonymous access checks](anonymous-access.json), and [anonymous playback checks](anonymous-playback.json). Raw native review events and session identity remain local with the receipt.
+
 ## Scope and limitations
 
 This is Chromium-only local verification, not a cross-browser or production deployment test. GitHub CLI has no supported native inline video upload in this environment; these durable public-fork Git links are the fallback, not native PR attachments. GitHub's Markdown UI may offer a download rather than inline playback. Temporary runners, logs, and media are excluded from the implementation branch. The original repository contains no dependency manifest or standalone journey runner; its existing journey contract is exercised with the locally available Playwright Chromium/expect library.
