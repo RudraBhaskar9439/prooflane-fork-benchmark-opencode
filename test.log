@@ -1,0 +1,49 @@
+{"label":"before","commit":"838b1a555e59091607ce412b737a19058386d0cd","browser":"159.0.8154.6","headless":false,"url":"http://127.0.0.1:3147","action":"Click Add one once","initial":"0","expected":"2","observed":"2","pageErrors":[],"video":"/Users/rudrabhaskar/Documents/Codex/2026-11-15/https-www-youtube-com-watch-v/work/pr-delivery-benchmark-2026-11-18/native-delivery/evidence/before.webm","recordedAt":"2026-11-18T03:33:00.730Z"}
+expect(locator).toHaveText(expected) failed
+
+Locator:  getByLabel('Count')
+Expected: "1"
+Received: "2"
+Timeout:  1500ms
+
+Call log:
+  - Expect "toHaveText" getByLabel('Count') with timeout 1500ms
+  - waiting for getByLabel('Count')
+    16 × locator resolved to <output aria-label="Count">2</output>
+       - unexpected value "2"
+
+PASS regression detects pinned-base bug: expected 1, received 2
+PASS candidate regression: initial 0, first click 1, second click 2
+{"label":"after","commit":"f2fa68f6f8683f027c8d4076555c63c28931866c","browser":"159.0.8154.6","headless":false,"url":"http://127.0.0.1:3147","action":"Click Add one once","initial":"0","expected":"1","observed":"1","pageErrors":[],"video":"/Users/rudrabhaskar/Documents/Codex/2026-11-15/https-www-youtube-com-watch-v/work/pr-delivery-benchmark-2026-11-18/native-delivery/evidence/after.webm","recordedAt":"2026-11-18T03:34:05.671Z"}
+
+$ (cwd=base) node --check server.mjs
+exit=0
+
+$ (cwd=checkout) node --check server.mjs
+exit=0
+
+$ (cwd=checkout) node --check journey.mjs
+exit=0
+
+$ (cwd=.) node regression.mjs base checkout/journey.mjs must-fail
+expect(locator).toHaveText(expected) failed
+
+Locator:  getByLabel('Count')
+Expected: "1"
+Received: "2"
+Timeout:  1500ms
+
+Call log:
+  - Expect "toHaveText" getByLabel('Count') with timeout 1500ms
+  - waiting for getByLabel('Count')
+    16 × locator resolved to <output aria-label="Count">2</output>
+       - unexpected value "2"
+
+PASS regression detects pinned-base bug: expected 1, received 2
+exit=0
+
+$ (cwd=.) node regression.mjs checkout checkout/journey.mjs must-pass
+PASS candidate regression: initial 0, first click 1, second click 2
+exit=0
+PASS recorded Chromium before assertion: 0 -> 2, commit 838b1a555e59091607ce412b737a19058386d0cd
+PASS recorded Chromium after assertion: 0 -> 1, commit f2fa68f6f8683f027c8d4076555c63c28931866c

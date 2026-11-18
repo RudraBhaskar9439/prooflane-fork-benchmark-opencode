@@ -1,0 +1,14 @@
+{
+  "label": "after",
+  "commit": "f2fa68f6f8683f027c8d4076555c63c28931866c",
+  "browser": "159.0.8154.6",
+  "headless": false,
+  "url": "http://127.0.0.1:3147",
+  "action": "Click Add one once",
+  "initial": "0",
+  "expected": "1",
+  "observed": "1",
+  "pageErrors": [],
+  "video": "after.webm",
+  "recordedAt": "2026-11-18T03:34:05.671Z"
+}
